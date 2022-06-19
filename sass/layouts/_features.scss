@@ -1,0 +1,35 @@
+.features {
+    display: flex;
+
+    &__item {
+            width: 270px;
+        }
+        
+    &__item:not(:first-child) {
+            margin-left: 30px;
+        }
+    &__thumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+
+            border-radius: 4px;
+            height: 120px;
+            background-color: $features-bg-color;
+        }
+    &__title {
+            margin-bottom: 10px;
+    
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+    &__text {
+            color: $secondary-text-color;
+            font-weight: 400;
+            line-height: 1.71;
+            letter-spacing: 0.03em;
+        }
+}

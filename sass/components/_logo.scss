@@ -1,0 +1,23 @@
+.logo {
+    padding-bottom: 25px;
+    padding-top: 24px;
+
+    color: $accent-color;
+    font-family: $secondaryFont, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+}
+
+.navbar__logo--black {
+    color: $primary-text-color;
+}
+
+.footer-address__logo {
+    padding: 0px;
+}
+
+.footer-address__logo--white {
+    color: $primary-white-color;
+}

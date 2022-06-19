@@ -1,0 +1,38 @@
+.clients {
+    display: flex; 
+}
+
+ .clients__item {
+     width: 170px;
+
+    &:not(:first-child) {
+            margin-left: 30px;
+        }
+ }
+
+ .clients__thumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            border: 1px solid $client-color;
+            border-radius: 4px;
+            height: 92px;
+            outline: transparent;
+            fill: $client-color;
+
+            @include animations(border-color, fill);
+
+            &:hover,
+            &:focus {
+                    border-color: $accent-color;
+                    fill: $accent-color;
+            }
+ }
+
+
+
+
+
+
+
