@@ -509,6 +509,11 @@ body {
 .section-about {
   padding-top: 0px;
 }
+@media screen and (max-width: 1199px) {
+  .section-about {
+    display: none;
+  }
+}
 
 .about {
   display: flex;
