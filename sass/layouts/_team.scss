@@ -24,7 +24,7 @@
                 @media screen and (max-width: 767px) {
                  &:not(:first-child) {
                      margin-top: 30px;
-        }
+                    }
                 }
 
                 @media screen and (min-width: $tablet) {
@@ -33,17 +33,20 @@
             
                 }
 
-                @media screen and (min-width: $desktop){
+                @media screen and (min-width: $desktop) {
+                flex-basis: auto;
+                 margin: 0;
+                
+                 }
 
-                    &:not(:first-child) {
-                            margin-left: 30px;
-                        }
+                 @media screen and (min-width: $desktop) {
+                &:not(:first-child) {
+                        margin-left: 30px;
+                    }
                 }
-        }
+                        
+     }
 
-         
-
-  
 
    &__information {
         padding: 30px 122px 24px 122px;
