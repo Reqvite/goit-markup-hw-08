@@ -5,8 +5,22 @@
      background-color: $secondary-bg-color;
 
     &__container {
+        @media screen and (max-width: $desktop){
+        text-align: center;
+        }
+        
+
+        @media screen and(min-width: $tablet){
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+        }
+        @media screen and (min-width: $desktop){
             align-items: baseline;
+            flex-wrap: nowrap;
+        }
+            
         }
  }
 
@@ -37,7 +51,18 @@
  }
 
  .footer-social {
-     margin-left: 70px;
+    @media screen and (max-width:767px) {
+        margin-top: 60px;
+    }
+    
+    @media screen and (min-width: $tablet){
+        margin-left: auto;
+    }
+
+    @media screen and (min-width: $desktop){
+        margin-left: 70px;
+    }
+   
 
     &__text {
             margin-bottom: 20px;
@@ -52,6 +77,7 @@
     
     &__list {
              display: flex;
+             justify-content: center;
     
          }
     
@@ -81,7 +107,13 @@
  }
 
  .footer-subscribe {
-     margin-left: auto;
+    @media screen and (max-width: $desktop) {
+        margin-top: 60px;
+        }
+
+    @media screen and (min-width: $desktop){
+        margin-left: auto;
+    } 
 
     &__text {
             margin-bottom: 20px;
@@ -98,20 +130,38 @@
 
 
  .subscribe {
-     display: flex;
+    @media screen and (min-width: $desktop){
+        display: flex;
+    }
+  
+    
 
     &__button--end {
+        @media screen and (max-width: $desktop){
+                    margin-top: 20px;
+        }
+        @media screen and (min-width: $desktop){
             margin-left: 12px;
+        }
+           
         }
     
     &__input {
              margin: 0;
+
              color: $primary-white-color;
-             width: 358px;
              background-color: #2F303A;
              padding: 15px 0 15px 16px;
              border: 1px solid rgba(255, 255, 255, 0.3);
              border-radius: 4px;
+
+             @media screen and (max-width: $desktop){
+                width: 100%;
+             }
+
+             @media screen  and (min-width: $desktop){
+                width: 358px;
+             }
          }
 
     &__input::placeholder {
