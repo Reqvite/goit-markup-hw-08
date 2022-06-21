@@ -5,6 +5,12 @@ body {
     font-size: 14px;
 }
 
+@media screen and (max-width: $desktop){
+    body.modal-open {
+            overflow: hidden;
+        }
+}
+
 .section {
     padding-top: 60px;
     padding-bottom: 60px;
