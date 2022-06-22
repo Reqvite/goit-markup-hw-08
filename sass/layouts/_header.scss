@@ -1,59 +1,85 @@
 .header {
+    position: relative;
     border-bottom: 1px solid $border-color;
 }
 
 .header__container {
     display: flex;
-    text-align: center;
+    @media screen and (min-width:$tablet){
+        align-items: center;
+    }
+}
+.navbar-desktop{
+    display: none;
+
+    @media screen and (min-width: $tablet){
+        display: flex;
+        margin-left: 88px;
+    }
 }
 
 .navbar {
     display: flex;
-    text-align: center;
 }
 
 .site-nav {
-    display: flex;
-    margin-left: 93px;
-  
+    @media screen and (min-width: $tablet){
+        display: flex;
+    }
 }
 
 .site-nav__item {
-    position: relative;
+    @media screen and (max-width: 767px) {
+        &:not(:first-child) {
+          margin-top: 32px;
+         }
+    }
 
-    &:not(:first-child) {
-            margin-left: 50px;
-        }
+    @media screen and (min-width: $tablet){
+            position: relative;
+
+                &:not(:first-child) {
+                            margin-left: 50px;
+                        }
+    }
+
 }
 
 .site-nav__link {   
     display: inline-block;
-    padding-top: 32px;
-    padding-bottom: 32px;
 
+    font-size: 40px;
+    line-height: 1.17;
     color: currentColor;
     font-weight: 500;
-    line-height: 1.14;
     letter-spacing: 0.02em;
 
     @include animated(color);
-    
-        &::after {
-        content: '';
+    @media screen and (min-width: $tablet){
+            padding-top: 32px;
+            padding-bottom: 32px;
 
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        display: block;
+                font-size: 14px;
+                line-height: 1.14;
 
-         width: 100%;
-        height: 4px;
-         border-radius: 2px;
-         background-color: $accent-color;
-        transform: scaleX(0);
-        @include animated(transform);
-
+            &::after {
+                    content: '';
+            
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    display: block;
+            
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: $accent-color;
+                    transform: scaleX(0);
+                    @include animated(transform);
+            
+                }
     }
+     
         &:hover,
         &:focus {
             color: $color-hover;
@@ -73,32 +99,70 @@
 }
 
 //Contacts
+.mob-menu-bottom{
+    @media screen and (max-width:767px){
+            margin-top: auto;
+    }
+
+} 
+
+.contacts-desktop{
+    display: none;
+     @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+     }
+
+          @media screen and (max-width: 1199px) {
+               &__item:not(:first-child) {
+                     margin-top: 10px;
+              }
+      }
+
+    @media screen and (min-width:$desktop) {
+          flex-direction: row;
+      }
+
+    @media screen and (min-width: $desktop){
+
+     &__item:not(:first-child) {
+            margin-left: 50px;
+            }
+    }
+    
+
+    
+}
 .contacts {
     display: flex;
-    margin-left: auto;
-
-    &__item:not(:first-child) {
-            margin-left: 50px;
-        }
+    flex-direction: column;
+        &__item{
+                @media screen and (max-width: 767px) {
+               &:last-child {
+                   order: -1;
+                  margin-bottom: 32px;
+                }
+               }
+  }
 
     &__icon {
+        @media screen and (max-width:767px){
+                    display: none;
+        }
+        
+        @media screen and (min-width: $tablet){
             margin-right: 10px;
-            fill: currentColor;
+             fill: currentColor;
+        } 
     
         }
-
 }
 
+
 .contacts__link {
-             display: flex;
-             align-items: center;
-             padding-top: 32px;
-             padding-bottom: 32px;
-    
              color: $secondary-text-color;
-             text-decoration: none;
              font-weight: 500;
-             line-height: 1.14;
              letter-spacing: 0.02em;
     
              @include animated(color);
@@ -107,5 +171,114 @@
             &:focus {
                 color: $color-hover;
                 }
+            @media screen and (max-width:767px){
+                &--mail {
+                             font-size: 24px;
+                            line-height: 1.16;
+                            
+                    }
+                            
+                &--tel {
+                             color: $accent-color;
+                              font-size: 34px;
+                    }
+            }
+
+            @media screen and (min-width: $tablet){
+                   display: flex;
+                   align-items: center;
+                    font-size: 14px;
+                    line-height: 1.14;
+            }
+
+            @media screen and (min-width:$desktop){
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+     
  }
 
+ .header-social {
+    display: flex;
+    margin-top: 64px;
+
+    &__item {
+            position: relative;
+    
+            color: $accent-color;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.22;
+            letter-spacing: 0.02em;
+
+            &:not(:last-child){
+            margin-right: 20px;
+            }
+        }
+    
+     &__link{
+        color: currentColor;
+     }   
+    
+    &__item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        width: 1px;
+        height: 22px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+     }
+ }
+
+//  MENU BUTTON
+.menu-button {
+    display: inline-flex;
+    position: absolute;
+    top: 22px;
+    right: 15px;
+    z-index: 2;
+    border: none;
+    background-color: transparent;
+
+    @media screen and (min-width: $tablet){
+        display: none;
+    }
+}
+
+
+.menu-button .icon-cross {
+    display: none;
+}
+
+.menu-button.is-open .icon-cross {
+    display: block;
+}
+
+.menu-button.is-open .icon-menu {
+    display: none;
+}
+
+.menu-container {
+
+    @media screen and (max-width: 767px){
+        display: none;
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+
+            padding: 48px 15px 48px 15px;
+                background-color: white;
+
+         &.is-open {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (min-width: $tablet){
+        display: none;
+    }
+}
