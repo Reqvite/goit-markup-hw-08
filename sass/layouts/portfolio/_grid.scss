@@ -9,11 +9,21 @@
 
     @media screen and (min-width: $tablet){
         grid-template-columns: auto auto;
+
+            &__item {
+                    width: 354px;
+                }
     }
 
     @media screen and (min-width: $desktop){
         grid-template-columns: auto auto auto;
+
+        &__item {
+                width: 370px;
+            }
     }
+
+
 }
 
 .portfolio__link {
@@ -35,6 +45,7 @@
 
 .portfolio__overlay {
     position: absolute;
+    overflow: auto;
     top: 0;
     left: 0;
     width: 100%;
@@ -65,24 +76,25 @@
 }
 
 .portfolio__information {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 20px 0 20px 24px;
     border: 1px solid $border-color;
     border-top: 0;
+
 }
 
 .portfolio__title {
+
     margin-bottom: 4px;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
 
+
+
 .portfolio__type {
     color: $secondary-text-color;
     font-size: 16px;
-    line-height: 1.88;
+    line-height: 1.9;
     letter-spacing: 0.03em;
 }

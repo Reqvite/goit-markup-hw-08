@@ -197,11 +197,11 @@
 
  .header-social {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 64px;
 
     &__item {
             position: relative;
-    
             color: $accent-color;
             font-weight: 500;
             font-size: 18px;
@@ -232,11 +232,12 @@
     display: inline-flex;
     position: absolute;
     padding: 0;
-    top: 22px;
+    top: 50%;
     right: 15px;
     z-index: 2;
     border: none;
     background-color: transparent;
+    transform: translateY(-50%);
 
     @media screen and (min-width: $tablet){
         display: none;
@@ -267,17 +268,17 @@
 .menu-container {
 
     @media screen and (max-width: 767px){
-         position: absolute;
+         position: fixed;
          z-index: 1;
          top: 0;
          left: 0;
          width: 100vw;
-         height: 100vh;
+         height: 100%;
 
-        padding: 48px 15px 48px 15px;
+        padding: 48px 15px 48px 40px;
         background-color: white;
 
-        transform: translateY(-100%);
+        transform: translateY(-150%);
         @include animated(transform);
          &.is-open {
             
