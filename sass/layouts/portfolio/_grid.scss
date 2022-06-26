@@ -27,8 +27,10 @@
 }
 
 .portfolio__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     color: currentColor;
-    display: block;
     @include animated(box-shadow);
 
     &:hover,
@@ -76,7 +78,8 @@
 }
 
 .portfolio__information {
-    padding: 20px 0 20px 24px;
+    flex-grow: 1;
+    padding: 20px 24px;
     border: 1px solid $border-color;
     border-top: 0;
 
