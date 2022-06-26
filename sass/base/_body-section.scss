@@ -1,20 +1,14 @@
 body {
+    overflow-y: auto;
     background-color: $primary-white-color;
     color: $primary-text-color;
     font-family: $mainFont, sans-serif;
     font-size: 14px;
 }
 
-@media screen and (max-width: $desktop){
-    body.modal-open {
-            overflow: hidden;
-        }
-}
-
 .section {
     padding-top: 60px;
     padding-bottom: 60px;
-
     @media screen and (min-width: $desktop) {
             padding-top: 94px;
             padding-bottom: 94px;

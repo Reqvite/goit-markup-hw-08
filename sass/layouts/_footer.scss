@@ -12,12 +12,12 @@
 
         @media screen and(min-width: $tablet){
             display: flex;
+            align-items: baseline;
             justify-content: center;
             flex-wrap: wrap;
             
         }
         @media screen and (min-width: $desktop){
-            align-items: baseline;
             flex-wrap: nowrap;
         }
             

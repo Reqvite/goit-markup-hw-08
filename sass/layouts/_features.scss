@@ -54,7 +54,13 @@
             line-height: 1.14;
             letter-spacing: 0.03em;
             text-transform: uppercase;
+
+            @media screen and (max-width:767.98px){
+                text-align: center;
+            }
         }
+    
+    
     &__text {
             color: $secondary-text-color;
             font-weight: 400;
