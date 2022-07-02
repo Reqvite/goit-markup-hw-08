@@ -1,11 +1,64 @@
-    
-
-@mixin animated($property){
-transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+@mixin animated($property) {
+  transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @mixin animations($property, $anotherProperty) {
-    transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1), $anotherProperty 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    $anotherProperty 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+@mixin transition($one, $two, $three, $time, $func) {
+  transition-property: $one, $two, $three;
+  transition-duration: $time;
+  transition-timing-function: $func;
+}
+
+@mixin list($dsp, $fw, $m, $mt, $ml, $mb, $mr) {
+  display: $dsp;
+  flex-wrap: $fw;
+  margin: $m;
+  margin-top: $mt;
+  margin-left: $ml;
+  margin-bottom: $mb;
+  margin-right: $mr;
+}
+
+@mixin item($q, $g, $m, $mt, $ml, $mb, $mr) {
+  flex-basis: calc(100% / #{$q} - #{$g});
+  margin: $m;
+  margin-top: $mt;
+  margin-left: $ml;
+  margin-bottom: $mb;
+  margin-right: $mr;
+}
+
+@mixin centeredFlex2($ai, $jc, $fd, $fw, $gap) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+  flex-wrap: $fw;
+  gap: $gap;
+}
+
+@mixin centeredFlex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin font($ff, $fw, $fs, $ls, $lh, $c) {
+  font-family: $ff;
+  font-weight: $fw;
+  font-size: $fs;
+  letter-spacing: $ls;
+  line-height: $lh / $fs;
+  color: $c;
+}
+
+@mixin section($pt, $pb, $pl, $pr) {
+  padding-top: $pt;
+  padding-bottom: $pb;
+  padding-left: $pl;
+  padding-right: $pr;
 }
